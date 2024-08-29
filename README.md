@@ -28,6 +28,14 @@
 - it has inbuilt testing
 - CRA takes care of postcsssrc for tailwind
 
+# Axios
+- no major use of axios 
+
+# Best Practice
+- Dont right away use map
+- Make it work one one then scale it
+
+
 {
     Head
     Body
