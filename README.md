@@ -35,6 +35,16 @@
 - Dont right away use map
 - Make it work one one then scale it
 
+# React Router
+- appRouter 
+- where you give router provider our app will render there
+
+# App Router
+- path and element is defined accordingly
+- the app router path will perform where the outlet is
+
+
+
 
 {
     Head
