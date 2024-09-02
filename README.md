@@ -43,6 +43,44 @@
 - path and element is defined accordingly
 - the app router path will perform where the outlet is
 
+# HOC
+- A function which takes the component and returns a new component
+
+# need of HOC
+- while doing small modification
+- Eg: Ad is similar to videocard
+
+# Interview Questions
+- Search functionality
+- if we are searching for something in youtube, it makes api call on every key strokes
+- In flipkart, it makes api call on every key strokes, this is called debouncing
+
+# Debouncing
+- typing slow
+
+# Performace:
+- iphone 14 max = 14L * 1000 = 14000
+- with debouncing = 3 api calls * 1000 = 3000 
+
+# Debouncing with 200 ms:
+- if diff btw key strokes is < 200 ms (typing too fast) - not call api (Decline API)
+- if diff btw key strokes is > 200 ms (typing slow or nomal) - call API
+
+# Return function in useEffect
+- Used for cleanup
+
+# Debouncing
+
+key - i
+- render comp
+- useEffect is called
+- start timer - make api call fater 200ms
+
+key - ip
+- render comp
+- useEffect is called
+- start timer - make api call fater 200ms
+
 
 
 
