@@ -81,6 +81,26 @@ key - ip
 - useEffect is called
 - start timer - make api call fater 200ms
 
+# Caching
+- time complexity to search in array  = O(n)
+- Time complexity of array.indexOf(), array.includes() = O(n)
+
+[i,ip,iph,iphone]
+
+- Time complexity to search in object or HashMap = O(1)
+
+{
+    i:
+    ip:
+    iph:
+    iphone
+}
+
+# LRU Cache - Least Recently Used (LRU)
+
+# N Level Nested Comments - Eg: Reddit
+
+
 
 
 

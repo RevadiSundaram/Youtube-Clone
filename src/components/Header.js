@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUserCircle } from "react-icons/fa";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { toggleMenu } from '../utils/appSlice';
 import { YOUTUBE_SEARCH_API } from '../utils/constant';
 import { CiSearch } from "react-icons/ci";
+import { cacheResults } from '../utils/searchSlice';
 
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
-    console.log(searchQuery);
+   
+    const searchCache = useSelector((store) => store.search);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        const timer = setTimeout(() => getSearchSuggestions(), 200);
-
+        const timer = setTimeout(() => {
+            if(searchCache[searchQuery]){
+                setSuggestions(searchCache[searchQuery]);
+            }
+            else{
+                getSearchSuggestions();
+            }
+        }, 200);
+        
         return () => {
             clearTimeout(timer);
         }
@@ -25,9 +35,14 @@ const Header = () => {
         const json = await data.json();
         setSuggestions(json[1]);
         console.log(json[1]);
+
+        //updates cache
+        dispatch(cacheResults({
+            [searchQuery] : json[1]
+        }))
     }
 
-    const dispatch = useDispatch();
+
 
     const toggleMenuHandler = () => {
         dispatch(toggleMenu());
@@ -67,7 +82,6 @@ const Header = () => {
         </div>
         <div>
         <FaUserCircle size={30} />
-       
         </div>
          
     </div>
