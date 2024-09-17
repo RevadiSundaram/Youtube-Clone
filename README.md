@@ -100,6 +100,37 @@ key - ip
 
 # N Level Nested Comments - Eg: Reddit
 
+# Live Chat >>>> Infinite Scroll >>>> Pagination
+
+# Challenges of Live chat
+- Get data live
+- Update data on UI
+
+# Complexity
+- Even if I open page for 1 hr, millions of data coming in, our page should handle it
+- Data Layer
+
+# Data (Live)
+- Web Sockets - is a two way handshake (Bidirectional live data) (UI and Server)
+Can send data whenever they want to and in any direction
+Initial connection take some time
+No Regural Interval
+
+- API polling - Data flows from server to UI
+Unidirectional
+Checking after 10 secs if data has or not
+Interval
+
+# Live chat
+- All chat applications, always use Websockets
+- For push notifications
+
+# API Polling
+- Cricbuzz, Gmail
+
+ 
+ 
+
 
 
 
