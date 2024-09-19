@@ -129,6 +129,22 @@ Interval
 - Cricbuzz, Gmail
 
  
+# useMemo
+- heavy operations like calculating nth prime number
+- if any state changes, React will re-render the entire page
+- when doing simple operations, React is very fast
+- But calculating nth prime number, takes time after a certain point
+- such issues can be handled using Memoization/useMemo
+
+```js
+ // const cachedValue = useMemo(calculateValue, dependencies)
+    const prime = useMemo(() => findNthPrime(text), [text]);
+    // keep memoizing it and only change when input text changes -> dependency
+```
+
+# React
+- It rerenders the component whenever any state changes or props changes
+
  
 
 
