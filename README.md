@@ -130,6 +130,8 @@ Interval
 
  
 # useMemo
+- useMemo is a React Hook that lets you cache the result of a calculation between re-renders.
+
 - heavy operations like calculating nth prime number
 - if any state changes, React will re-render the entire page
 - when doing simple operations, React is very fast
@@ -145,7 +147,18 @@ Interval
 # React
 - It rerenders the component whenever any state changes or props changes
 
- 
+# useCallback
+- useCallback is a React Hook that lets you cache a function definition between re-renders.
+
+```js
+const cachedFn = useCallback(fn, dependencies);
+```
+
+# useRef
+- if you want to change a value, but you dont want the component to rerender
+
+
+
 
 
 
